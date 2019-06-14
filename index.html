@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function(){
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(
+                        function(position){
+                            alert("纬度："+position.coords.latitude+"；经度："+position.coords.longitude)
+                        }
+                        ,
+                        function(error){
+                            var msg = error.code + "\n" + error.message;
+                        }
+                    );
+                }else{
+                    alert("您当前浏览器不支持或者你取消了获取当前位置信息");
+                }
+        })();
+    </script>
+</body>
+</html>
